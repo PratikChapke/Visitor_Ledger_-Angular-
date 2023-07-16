@@ -1,0 +1,100 @@
+
+<!-- <div class="menu">
+  <button>GetByEmployee</button>
+  <button>GetByDate</button>
+  <button>GetByRange</button>
+</div> -->
+
+<button mat-icon-button (click)="toggleSidebar()">
+  <mat-icon>menu</mat-icon>
+</button>
+
+<mat-sidenav-container class="container">
+  <mat-sidenav mode="over" [opened]="sidebarOpened" class="sidenav">
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button (click)="onClick()">GetByEmployee</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button (click) = "onRangeClick()">GetByRange</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button (click) = "onDateClick()">GetByDate</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button (click) = "onChangePassword()">Change Password</button>
+      </mat-list-item>
+    <mat-list-item>
+        <button mat-button (click) = "onAddAdmin()">Add Admin</button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Your existing content goes here -->
+    <div class="grid-container">
+      <!-- Your existing code -->
+      <h1 class="mat-h1">Dashboard</h1>
+      <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px">
+       
+        <!--Charts-->
+    
+         <!-- pie-chart -->
+       <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" [rowspan]="( cardLayout | async )?.chart?.rows">
+        <app-card title="Personal And Official Visitors">
+            <app-pie-chart></app-pie-chart>
+        </app-card>
+     </mat-grid-tile>
+    
+        <!-- bar-chart -->
+        <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" [rowspan]="( cardLayout | async )?.chart?.rows">
+          <app-card title="Number Of Visitors">
+              <app-bar-chart></app-bar-chart>
+          </app-card>
+       </mat-grid-tile>
+    
+       <!-- line-chart -->
+       <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" [rowspan]="( cardLayout | async )?.chart?.rows">
+          <app-card title="Number Of Employees Being Visited">
+              <app-line-chart></app-line-chart>
+          </app-card>
+       </mat-grid-tile>
+    
+        <!--Mini Cards-->
+        <!-- <mat-grid-tile *ngFor="let i of [1, 2, 3, 4]" [colspan]="( cardLayout | async )?.miniCard?.cols"
+          [rowspan]="( cardLayout | async )?.miniCard?.rows">
+          <app-card title="Card {{i}}"><div>Mini Card Content Here</div></app-card>
+        </mat-grid-tile> -->
+
+        <mat-grid-tile *ngFor="let i of [1]" [colspan]="( cardLayout | async )?.miniCard?.cols"
+          [rowspan]="( cardLayout | async )?.miniCard?.rows">
+          <app-card title="Total Visitors">
+           <h1> {{visitorCount}}</h1>
+          </app-card>
+        </mat-grid-tile>
+ 
+        <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard?.cols"
+        [rowspan]="( cardLayout | async )?.miniCard?.rows">
+        <app-card title="Download Excel Sheet">
+          <button mat-raised-button color="primary">
+            <a href="http://localhost:8050/admin/excel" target="_blank" id="anc"> Download</a>
+          </button>
+        </app-card>
+      </mat-grid-tile>
+    
+    
+    
+        <!--Table-->
+        <!-- <mat-grid-tile [colspan]="( cardLayout | async )?.table?.cols" [rowspan]="( cardLayout | async )?.table?.rows">
+          <app-card title="Card 9"><div>Table Content Here</div></app-card>
+        </mat-grid-tile> -->
+      </mat-grid-list>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+<!-- <div class="grid-container">
+ 
+ </div> -->

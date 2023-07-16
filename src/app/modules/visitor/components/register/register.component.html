@@ -1,0 +1,61 @@
+
+<mat-card class="card">
+    <mat-card-title>Visitor Register Form</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit(formData)" #formData="ngForm" class="" >
+        <mat-form-field>
+          <input matInput placeholder="Name" name="name" ngModel required>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput type="email" placeholder="Email" name="email" ngModel required>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput type="number" placeholder="Age" name="age" ngModel  min="0" max="101" required>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Gender</mat-label>
+          <mat-select name="gender" ngModel required>
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+            <mat-option value="other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput type="tel" placeholder="Contact Number" name="contactNumber" ngModel appOtherSelector required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label for="whomToMeet">Whom To Meet</mat-label>
+          <mat-select name="whomToMeet" id="whomToMeet" ngModel required>
+            <mat-option *ngFor="let employee of employees" [value]="employee.name">{{ employee.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+
+        <mat-form-field>
+          <mat-label>Reason for Meeting</mat-label>
+          <mat-select name="reasonForMeeting" ngModel #reasonSelect="ngModel" required>
+            <mat-option value="official">Official</mat-option>
+            <mat-option value="personal">Personal</mat-option>
+          </mat-select>
+        </mat-form-field>
+   
+        <mat-form-field>
+          <input matInput placeholder="Visitor Organization" name="visitorOrganization" ngModel required [disabled]="reasonSelect.value === 'personal'">
+        </mat-form-field>
+
+        
+        <input id="img" type="button" value="Capture Image" (click)="captureImage()">
+        <div *ngIf="captureMyImage">
+          <app-image-capture></app-image-capture>
+        </div> 
+        <!-- <input type = "text" name = "imgPath" display="none" ngModel> -->
+        <button mat-raised-button color="primary" type="submit">Register</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

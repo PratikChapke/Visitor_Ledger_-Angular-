@@ -1,0 +1,24 @@
+<!-- <div style="display: block;">
+    <canvas baseChart width="400" height="300"
+      [type]="'line'"
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      [legend]="lineChartLegend">
+    </canvas>
+  </div>
+   -->
+
+   <div style="display: block">
+    <canvas baseChart
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+     
+      [legend]="lineChartLegend"
+      [type]="'line'"
+      [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+
+  <!-- [colors]="lineChartColors" -->
+  

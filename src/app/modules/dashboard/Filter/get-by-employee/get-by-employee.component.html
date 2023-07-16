@@ -1,0 +1,51 @@
+<!-- <mat-form-field  >
+    <mat-label for="filterByEmployee"> Filter by Employee</mat-label>
+    <mat-select name="filterByEmployee" id="filterByEmployee" (change) = "onSelect($event)" ngModel required>
+      <mat-option *ngFor="let employee of employees" [value]="employee.name" [(ngModel)] = employeeName >{{ employee.name }}</mat-option>
+    </mat-select>
+  </mat-form-field> -->
+
+
+<form #formData = "ngForm" id="form">
+  <select name="filterByEmployee"  id="filterByEmployee" (change) = "onSelect($event)" ngModel required >
+    <option *ngFor="let employee of employees" [value]="employee.name" >{{employee.name}}</option>
+  </select>
+</form>
+
+
+<div class="container">
+    <table >
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Contact Number</th>
+            <th>Reason for Meeting</th>
+            <th>Visitor Organization</th>
+            <th>In Time</th>
+            <th>Out Time</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let visitor of visitors">
+            <td>{{ visitor.id }}</td>
+            <td>{{ visitor.name }}</td>
+            <td>{{ visitor.email }}</td>
+            <td>{{ visitor.age }}</td>
+            <td>{{ visitor.gender }}</td>
+            <td>{{ visitor.contactNumber }}</td>
+            <td>{{ visitor.reasonForMeeting }}</td>
+            <td>{{ visitor.visitorOrganization }}</td>
+            <td>{{ visitor.inTime }}</td>
+            <td>{{ visitor.outTime }}</td>
+            <td>{{ visitor.outTime }}</td>
+            <td>{{ visitor.date | date}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,16 @@
+
+<form #formData="ngForm" (submit) = "onSubmit(formData)">
+    <label for="username">Enter new admin's username</label>
+    <input type=text id="username" name="username" ngModel>
+    <br>
+    <label for="name">Enter new admin's name</label>
+    <input type="text" id="name" name="name" ngModel>
+    <br>
+    <label for="email">Enter new admin's email</label>
+    <input type="email" id="email" name="email" ngModel>
+    <br>
+    <label for="password">Enter new admin's password</label>
+    <input type="password" id="password" name="password" ngModel>
+
+    <input type="submit" value="SUBMIT">
+</form>

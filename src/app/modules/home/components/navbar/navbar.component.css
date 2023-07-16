@@ -1,0 +1,17 @@
+#img{
+    height: 100%;
+    /* width: 5%; */
+}
+
+.title{
+    margin: 3%;
+}
+
+/* .home{
+    font-weight:bolder;
+} */
+
+#anc {
+    text-decoration: none;
+    color: white;
+}

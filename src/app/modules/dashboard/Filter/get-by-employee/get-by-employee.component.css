@@ -1,0 +1,28 @@
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+table {
+    border: 3px solid black;
+}
+table th{
+    border : 2px solid black;
+    /* padding-left:0.1%;
+    padding-right: 0.1%; */
+    width: 10%;
+}
+table tr{
+    border : 2px solid black;
+}
+
+table td{
+    border : 2px solid black;
+}
+
+#form {
+    margin: 3%;
+}

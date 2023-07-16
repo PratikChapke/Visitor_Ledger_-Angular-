@@ -1,0 +1,41 @@
+.home{
+    display: flex;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  }
+  
+  .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 30%;
+    margin: 3%;
+    /* background-color: #97a2df; */
+    border-radius: 25px ;
+    background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%); 
+   }
+
+   .card:hover {
+    transform: translateY(-5px);
+    background-color: #948b9b;
+   
+  }
+  
+  .icon{
+    transform: scale(4);
+  }
+  
+  .btn{
+    margin-top: 15%;
+    height: 20%;
+    border: 1px solid black;
+    border-radius: 7px ;
+  }
+  
+  #anc {
+    text-decoration: none;
+  }

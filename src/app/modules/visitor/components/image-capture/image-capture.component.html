@@ -1,0 +1,28 @@
+<div class="container mt-2">
+    <!-- <h2>Angular Webcam Capture Image from Camera</h2> -->
+    <div class="col-md-12">
+      <webcam
+        [trigger]="invokeObservable"
+        (imageCapture)="captureImg($event)"
+      ></webcam>
+    </div>
+    <div class="col-md-12">
+      <input type="button" btn btn-danger value = "Click Here" (click)="getSnapshot()">
+      
+    </div>
+    <div class="col-12">
+      <div id="results">Register If Image Is Clear</div>
+      <img [src]="webcamImage?.imageAsDataUrl" /> <!-- this stores the image -->
+      <!-- <div>
+        <input type="button" value = "Upload Image" (click)="uploadImage()">
+      </div> -->
+    </div>
+  
+  
+    <!-- <textarea [(ngModel)]="encodedImage" rows="10" cols="50"></textarea>
+  <div *ngIf="decodedImage">
+  <img [src]="decodedImage" alt="Decoded Image">
+  </div>
+  <button (click)="decodeImage()">Decode Image</button> -->
+  
+  </div>

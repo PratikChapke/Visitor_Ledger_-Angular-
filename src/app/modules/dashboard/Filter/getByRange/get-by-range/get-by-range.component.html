@@ -1,0 +1,45 @@
+<form #formData = "ngForm" >
+    <label for = "dateS">Enter start date : </label>
+    <input type="date" name="date" id="dateS" (change) = "onfirst($event)" ngModel>
+     <br>
+    <label for = "dateE">Enter end date : </label>
+    <input type = "date" name = "date" id="dateE" (change) = "onChange($event)" ngModel>
+  </form>
+
+  <div class="container">
+    <table >
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Contact Number</th>
+            <th>Reason for Meeting</th>
+            <th>Visitor Organization</th>
+            <th>In Time</th>
+            <th>Out Time</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+           <tr *ngFor="let visitor of visitors">
+            <td>{{ visitor.id }}</td>
+            <td>{{ visitor.name }}</td>
+            <td>{{ visitor.email }}</td>
+            <td>{{ visitor.age }}</td>
+            <td>{{ visitor.gender }}</td>
+            <td>{{ visitor.contactNumber }}</td>
+            <td>{{ visitor.reasonForMeeting }}</td>
+            <td>{{ visitor.visitorOrganization }}</td>
+            <td>{{ visitor.inTime }}</td>
+            <td>{{ visitor.outTime }}</td>
+            <td>{{ visitor.outTime }}</td>
+            <td>{{ visitor.date| date}}</td> 
+            
+          </tr>
+        </tbody>
+      </table>
+</div>
+

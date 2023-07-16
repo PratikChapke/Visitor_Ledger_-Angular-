@@ -1,0 +1,36 @@
+.containers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #8BC6EC;
+background-image: linear-gradient(225deg, #8BC6EC 0%, #9599E2 50%, #ea9dc9 100%);
+
+/* background-color: #8BC6EC;
+background-image: linear-gradient(135deg, #8BC6EC 50%, #9599E2 100%); */
+
+
+}
+
+.mdc-card__actions{
+    margin-left: 25%;
+}
+
+#title{
+    margin-left: 21%;
+    padding-bottom: 10%;
+}
+
+.mat-mdc-card-header {
+    display: block;
+    margin-left: 7%;
+}
+
+.mat-mdc-card {
+    padding-top: 7%;
+    padding-bottom: 11%;
+    border-radius: 7px;
+     /* background-color: #FF3CAC; */
+background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+}
+
